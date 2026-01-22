@@ -45,6 +45,7 @@ function AdminDashboardContent() {
   setCurrentPage(1);
   SetUserList([]);
   fetchUsers(1, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [search, status, role]);
 
 
@@ -53,6 +54,7 @@ useEffect(() => {
     fetchUsers(currentPage);
   }
 }, [currentPage]);
+
 
   const onScroll = () => {
 
