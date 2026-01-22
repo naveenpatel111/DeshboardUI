@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";  
+import Register from "./Components/RegisterComponent/Register";
+import { Route,  Routes } from "react-router-dom";
+import Login from "./Components/LoginComponent/Login";
+import UserDashboard from "./Components/UserDashboardComponent/UserDashBoard";
+import VisitorContent from "./Components/HomeContentComponent/VisiterHomeContent";
+import CommonFooter from "./Components/FooterComponent/Footer";
+import AdminDashboardContent from "./Components/HomeContentComponent/AdminDeshboard";
+import Header from "./Components/HeaderComponent/Header";
+import Logout from "./Components/LogoutComponent/Logout";
+import UserDashboardContent from "./Components/HomeContentComponent/UserDeshboard";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <Header/>
+      <Routes>
+        <Route path="/" element={  <VisitorContent/>}></Route>
+        <Route path="/register" element={<Register/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/userDashboard" element={<UserDashboardContent/>}></Route>
+        <Route path="/adminDashboard" element={<AdminDashboardContent/>}></Route>
+        <Route path="/logout" element={<Logout/>}></Route>
+
+      </Routes>
+     <CommonFooter/>
+    </>
   );
 }
 
 export default App;
+
